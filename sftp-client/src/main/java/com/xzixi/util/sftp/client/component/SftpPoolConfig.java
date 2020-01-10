@@ -1,5 +1,7 @@
 package com.xzixi.util.sftp.client.component;
 
+import com.xzixi.util.sftp.client.properties.CommonProperties;
+import org.apache.commons.pool2.impl.DefaultEvictionPolicy;
 import org.apache.commons.pool2.impl.EvictionPolicy;
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 
@@ -139,6 +141,31 @@ public class SftpPoolConfig extends GenericObjectPoolConfig<Sftp> {
         }
         public Builder jmxNameBase(String jmxNameBase) {
             this.jmxNameBase = jmxNameBase;
+            return this;
+        }
+        public Builder properties(CommonProperties properties) {
+            CommonProperties.Pool pool = properties.getPool();
+            this.maxTotal(pool.getMaxTotal())
+                .maxIdle(pool.getMaxIdle())
+                .minIdle(pool.getMinIdle())
+                .lifo(pool.isLifo())
+                .fairness(pool.isFairness())
+                .maxWaitMillis(pool.getMaxWaitMillis())
+                .minEvictableIdleTimeMillis(pool.getMinEvictableIdleTimeMillis())
+                .evictorShutdownTimeoutMillis(pool.getEvictorShutdownTimeoutMillis())
+                .softMinEvictableIdleTimeMillis(pool.getSoftMinEvictableIdleTimeMillis())
+                .numTestsPerEvictionRun(pool.getNumTestsPerEvictionRun())
+                .evictionPolicy(null)
+                .evictionPolicyClassName(DefaultEvictionPolicy.class.getName())
+                .testOnCreate(pool.isTestOnCreate())
+                .testOnBorrow(pool.isTestOnBorrow())
+                .testOnReturn(pool.isTestOnReturn())
+                .testWhileIdle(pool.isTestWhileIdle())
+                .timeBetweenEvictionRunsMillis(pool.getTimeBetweenEvictionRunsMillis())
+                .blockWhenExhausted(pool.isBlockWhenExhausted())
+                .jmxEnabled(pool.isJmxEnabled())
+                .jmxNamePrefix(pool.getJmxNamePrefix())
+                .jmxNameBase(pool.getJmxNameBase());
             return this;
         }
     }

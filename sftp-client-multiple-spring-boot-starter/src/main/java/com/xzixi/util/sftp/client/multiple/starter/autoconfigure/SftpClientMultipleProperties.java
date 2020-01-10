@@ -1,6 +1,6 @@
 package com.xzixi.util.sftp.client.multiple.starter.autoconfigure;
 
-import com.xzixi.util.sftp.client.properties.Properties;
+import com.xzixi.util.sftp.client.properties.CommonProperties;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
@@ -14,5 +14,5 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "sftp-client-multiple")
 public class SftpClientMultipleProperties {
 
-    private Map<String, Properties> properties = new LinkedHashMap<>();
+    private Map<String, CommonProperties> properties = new LinkedHashMap<>();
 }

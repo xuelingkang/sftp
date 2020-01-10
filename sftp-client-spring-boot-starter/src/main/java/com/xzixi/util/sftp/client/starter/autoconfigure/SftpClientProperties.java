@@ -1,6 +1,6 @@
 package com.xzixi.util.sftp.client.starter.autoconfigure;
 
-import com.xzixi.util.sftp.client.properties.Properties;
+import com.xzixi.util.sftp.client.properties.CommonProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -13,6 +13,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ConfigurationProperties(prefix = "sftp-client")
-public class SftpClientProperties extends Properties {
+public class SftpClientProperties extends CommonProperties {
 
 }

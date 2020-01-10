@@ -9,7 +9,7 @@ import static org.apache.commons.pool2.impl.GenericObjectPoolConfig.*;
  * @author 薛凌康
  */
 @Data
-public class Properties {
+public class CommonProperties {
 
     /**
      * 主机ip

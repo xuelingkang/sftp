@@ -2,6 +2,7 @@ package com.xzixi.util.sftp.client.component;
 
 import com.jcraft.jsch.*;
 import com.xzixi.util.sftp.client.exception.SftpClientException;
+import com.xzixi.util.sftp.client.properties.CommonProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -129,6 +130,13 @@ public class SftpFactory extends BasePooledObjectFactory<Sftp> {
         }
         public Builder password(String password) {
             this.password = password;
+            return this;
+        }
+        public Builder properties(CommonProperties properties) {
+            this.host(properties.getHost())
+                .port(properties.getPort())
+                .username(properties.getUsername())
+                .password(properties.getPassword());
             return this;
         }
     }
