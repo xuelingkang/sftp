@@ -1,19 +1,15 @@
-package com.xzixi.util.sftp.client.starter.autoconfigure;
+package com.xzixi.util.sftp.client.properties;
 
 import lombok.Data;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import static org.apache.commons.pool2.impl.BaseObjectPoolConfig.*;
 import static org.apache.commons.pool2.impl.GenericObjectPoolConfig.*;
 
 /**
- * sftp连接池配置参数
- *
  * @author 薛凌康
  */
 @Data
-@ConfigurationProperties(prefix = "sftp-pool")
-public class SftpPoolProperties {
+public class Properties {
 
     /**
      * 主机ip
