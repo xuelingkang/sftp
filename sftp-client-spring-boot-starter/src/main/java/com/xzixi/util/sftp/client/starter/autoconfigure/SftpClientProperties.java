@@ -21,7 +21,7 @@ public class SftpClientProperties extends CommonProperties {
     private boolean multiple = false;
 
     /**
-     * 当type=ClientType.MULTIPLE时设置
+     * 当multiple=true时设置
      */
     private Map<String, CommonProperties> clients = new LinkedHashMap<>();
 }
