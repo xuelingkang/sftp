@@ -57,8 +57,6 @@ public class SftpClientProperties {
 
     /**
      * 池配置参数
-     *
-     * @author 薛凌康
      */
     @Data
     public static class Pool {
@@ -180,8 +178,6 @@ public class SftpClientProperties {
 
     /**
      * 废弃对象跟踪配置参数
-     *
-     * @author 薛凌康
      */
     @Data
     public static class Abandoned {
