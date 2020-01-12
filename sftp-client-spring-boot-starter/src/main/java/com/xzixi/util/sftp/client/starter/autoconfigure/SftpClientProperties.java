@@ -1,9 +1,11 @@
 package com.xzixi.util.sftp.client.starter.autoconfigure;
 
-import com.xzixi.util.sftp.client.properties.CommonProperties;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * sftp连接池配置参数
@@ -15,4 +17,11 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "sftp-client")
 public class SftpClientProperties extends CommonProperties {
 
+    /** 默认为单个 */
+    private boolean multiple = false;
+
+    /**
+     * 当type=ClientType.MULTIPLE时设置
+     */
+    private Map<String, CommonProperties> clients = new LinkedHashMap<>();
 }

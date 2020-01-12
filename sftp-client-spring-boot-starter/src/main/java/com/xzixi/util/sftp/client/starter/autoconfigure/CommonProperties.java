@@ -1,4 +1,4 @@
-package com.xzixi.util.sftp.client.properties;
+package com.xzixi.util.sftp.client.starter.autoconfigure;
 
 import lombok.Data;
 

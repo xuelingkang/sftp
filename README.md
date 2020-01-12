@@ -6,8 +6,6 @@
 
 ## 使用方法
 
-### 单个sftp源
-
 项目已经发布到maven中央仓库，直接在pom.xml中引用即可
 
 ```xml
@@ -15,12 +13,14 @@
     <dependency>
         <groupId>com.xzixi</groupId>
         <artifactId>sftp-client-spring-boot-starter</artifactId>
-        <version>2.0.0</version>
+        <version>2.1.0</version>
     </dependency>
 </dependencies>
 ```
 
-### yml配置
+### 单个sftp源
+
+#### yml配置
 
 ```yaml
 sftp-pool:
@@ -34,7 +34,7 @@ sftp-pool:
   password: root
 ```
 
-### java代码
+#### java代码
 
 ```java
 import com.xzixi.util.sftp.client.component.SftpClient;
@@ -63,22 +63,13 @@ public class SftpDemoApplicationTests {
 
 ### 多个sftp源
 
-```xml
-<dependencies>
-    <dependency>
-        <groupId>com.xzixi</groupId>
-        <artifactId>sftp-client-multiple-spring-boot-starter</artifactId>
-        <version>2.0.0</version>
-    </dependency>
-</dependencies>
-```
-
-### yml配置
+#### yml配置
 
 ```yaml
 # 只列举主要配置，其他配置同sftp-client
 sftp-client-multiple:
-  properties:
+  multiple: true
+  clients:
     client1:
       # 主机ip
       host: host1
@@ -99,7 +90,7 @@ sftp-client-multiple:
       password: root
 ```
 
-### java代码
+#### java代码
 
 ```java
 import com.xzixi.util.sftp.client.multiple.starter.autoconfigure.MultipleSftpClient;

@@ -1,6 +1,5 @@
 package com.xzixi.util.sftp.client.component;
 
-import com.xzixi.util.sftp.client.properties.CommonProperties;
 import org.apache.commons.pool2.impl.AbandonedConfig;
 
 import java.io.PrintWriter;
@@ -57,17 +56,6 @@ public class SftpAbandonedConfig extends AbandonedConfig {
         }
         public Builder useUsageTracking(boolean useUsageTracking) {
             this.useUsageTracking = useUsageTracking;
-            return this;
-        }
-        public Builder properties(CommonProperties properties) {
-            CommonProperties.Abandoned abandoned = properties.getAbandoned();
-            this.removeAbandonedOnBorrow(abandoned.isRemoveAbandonedOnBorrow())
-                .removeAbandonedOnMaintenance(abandoned.isRemoveAbandonedOnMaintenance())
-                .removeAbandonedTimeout(abandoned.getRemoveAbandonedTimeout())
-                .logAbandoned(abandoned.isLogAbandoned())
-                .requireFullStackTrace(abandoned.isRequireFullStackTrace())
-                .logWriter(new PrintWriter(System.out))
-                .useUsageTracking(abandoned.isUseUsageTracking());
             return this;
         }
     }

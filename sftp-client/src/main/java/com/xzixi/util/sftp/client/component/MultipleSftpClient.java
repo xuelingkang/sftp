@@ -1,6 +1,5 @@
-package com.xzixi.util.sftp.client.multiple.starter.autoconfigure;
+package com.xzixi.util.sftp.client.component;
 
-import com.xzixi.util.sftp.client.component.ISftpClient;
 import com.xzixi.util.sftp.client.exception.SftpClientException;
 
 import java.util.LinkedHashMap;
@@ -35,7 +34,7 @@ public class MultipleSftpClient implements ISftpClient {
         threadLocal.set(clientMap.get(name));
     }
 
-    void put(String name, ISftpClient client) {
+    public void put(String name, ISftpClient client) {
         clientMap.put(name, client);
     }
 }
