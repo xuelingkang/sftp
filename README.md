@@ -13,7 +13,7 @@
     <dependency>
         <groupId>com.xzixi</groupId>
         <artifactId>sftp-client-spring-boot-starter</artifactId>
-        <version>2.1.0</version>
+        <version>2.1.1</version>
     </dependency>
 </dependencies>
 ```
@@ -49,7 +49,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SftpDemoApplicationTests {
 
     @Autowired
-    private SftpClient sftpClient;
+    private ISftpClient sftpClient;
 
     @Test
     public void testSftp() {
@@ -105,13 +105,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SftpDemoApplicationTests {
 
     @Autowired
-    private MultipleSftpClient multipleSftpClient;
+    private ISftpClient sftpClient;
 
     @Test
     public void testSftp() {
         // 选择client1
-        multipleSftpClient.choose("client1");
-        multipleSftpClient.open(sftp -> {
+        ((MultipleSftpClient) sftpClient).choose("client1");
+        sftpClient.open(sftp -> {
             // 执行sftp操作
             sftp.delete("/root", "init.sql");
         });
