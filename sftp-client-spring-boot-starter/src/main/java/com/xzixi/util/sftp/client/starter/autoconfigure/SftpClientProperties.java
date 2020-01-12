@@ -17,7 +17,9 @@ import java.util.Map;
 @ConfigurationProperties(prefix = "sftp-client")
 public class SftpClientProperties extends CommonProperties {
 
-    /** 默认为单个 */
+    /**
+     * 默认为单个
+     */
     private boolean multiple = false;
 
     /**
