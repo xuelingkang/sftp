@@ -23,7 +23,8 @@
 #### yml配置
 
 ```yaml
-sftp-pool:
+# 只列举主要配置
+sftp-client:
   # 主机ip
   host: host
   # 端口号
@@ -66,8 +67,8 @@ public class SftpDemoApplicationTests {
 #### yml配置
 
 ```yaml
-# 只列举主要配置，其他配置同sftp-client
-sftp-client-multiple:
+# 只列举主要配置，其他配置同单个sftp源
+sftp-client:
   multiple: true
   clients:
     client1:
