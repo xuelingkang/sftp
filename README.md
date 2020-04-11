@@ -13,7 +13,7 @@
     <dependency>
         <groupId>com.xzixi</groupId>
         <artifactId>sftp-client-spring-boot-starter</artifactId>
-        <version>2.1.1</version>
+        <version>2.1.2</version>
     </dependency>
 </dependencies>
 ```
@@ -119,3 +119,7 @@ public class SftpDemoApplicationTests {
     }
 }
 ```
+
+## 更新
+
+- [更新日志](./UPDATELOG.md)
